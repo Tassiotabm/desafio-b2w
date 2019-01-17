@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "ed435b87-1b7a-4d69-a28b-43e0b0b919a0",
+		"name": "b2w",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "savePlanet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Nome\" : \"Yavin IV\",\n\t\"Clima\": \"Moderado\",\n\t\"Terreno\" : \"Rochoso\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/planet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"planet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllPlanets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/planet/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"planet",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/planet/5c3fff8fa300b74c44287188",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"planet",
+						"5c3fff8fa300b74c44287188"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePlanet",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/planet/5c4017115634d1477c042c50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"planet",
+						"5c4017115634d1477c042c50"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editPlanet",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t        \"Nome\": \"Planeta 2c\",\n        \"Clima\": \"Moderado\",\n        \"Terreno\": \"Rochoso\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/planet/5c400165caa66f19641755d4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"planet",
+						"5c400165caa66f19641755d4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
