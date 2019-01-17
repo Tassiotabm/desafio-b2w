@@ -82,6 +82,7 @@ router.delete('/:id', function (req, res) {
 
 // UPDATES A SINGLE PLANET IN THE DATABASE
 router.put('/:id', function (req, res) {
+    let planetId = req.params.id;
     Planet.findById(planetId, function (err, planets) {
         if (err) return res.status(500).send("Erro ao procurar planeta.");
         if (!planets) return res.status(404).send("Planeta não encontrado.");
