@@ -4,4 +4,4 @@ Desafio b2w
 
 -node server.js
 
-postman na raiz do proejto
+postman na raiz do projeto
