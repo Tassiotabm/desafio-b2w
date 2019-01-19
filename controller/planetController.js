@@ -37,7 +37,8 @@ router.post('/', function (req, res) {
 
 // RETURNS ALL THE PLANETS IN THE DATABASE
 router.get('/', function (req, res) {
-    Planet.find({}, async function (err, planetList) {
+    Planet.find({}, async function (err, planetList) 
+    {
         if (err) return res.status(500).send("Erro ao procurar planeta.");
         var response = [];
         for(const planet of planetList){

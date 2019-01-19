@@ -4,4 +4,5 @@ Desafio b2w
 
 -node server.js
 
-postman na raiz do projeto
+adicionado api na nuvem de teste: 157.230.14.32
+postman com envirioment local e da nuvem na raiz do projeto
