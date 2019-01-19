@@ -3,9 +3,9 @@
 var fetch = require("node-fetch");
 
 module.exports = {getCount : async function (name){
-    let url = 'https://swapi.co/api/planets/?search='+name;
-    let response = await fetch(url);
-    let obj = await response.json();
+    var url = 'https://swapi.co/api/planets/?search='+name;
+    var response = await fetch(url);
+    var obj = await response.json();
     if(obj.count == 0)
         return 0;
     return obj.results[0].films.length;

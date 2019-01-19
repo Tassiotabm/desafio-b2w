@@ -11,9 +11,9 @@ var request = require('request');
 // CREATES A NEW PLANET
 router.post('/', function (req, res) {
 
-    let nome = req.body.Nome;
-    let clima = req.body.Clima;
-    let terreno = req.body.Terreno;
+    var nome = req.body.Nome;
+    var clima = req.body.Clima;
+    var terreno = req.body.Terreno;
 
     if (!nome)
         return res.status(406).send("Por favor, preencha o nome do planeta.");
@@ -22,7 +22,7 @@ router.post('/', function (req, res) {
     else if (!terreno)
         return res.status(406).send("Por favor, preencha o terreno do planeta.");
 
-    let planet = new Planet({
+    var planet = new Planet({
         Nome: req.body.Nome,
         Clima: req.body.Clima,
         Terreno: req.body.Terreno
@@ -39,7 +39,7 @@ router.post('/', function (req, res) {
 router.get('/', function (req, res) {
     Planet.find({}, async function (err, planetList) {
         if (err) return res.status(500).send("Erro ao procurar planeta.");
-        let response = [];
+        var response = [];
         for(const planet of planetList){
             await swapiService.getCount(planet.Nome).then(count => {
                 response.push({
@@ -72,7 +72,7 @@ router.get('/:id', function (req, res) {
 
 // DELETES A PLANET FROM THE DATABASE
 router.delete('/:id', function (req, res) {
-    let planetId = req.params.id;
+    var planetId = req.params.id;
     Planet.findById(planetId, function (err, planets) {
         if (err) return res.status(500).send("Erro ao procurar planeta.");
         if (!planets) return res.status(404).send("Planeta não encontrado.");
@@ -85,7 +85,7 @@ router.delete('/:id', function (req, res) {
 
 // UPDATES A SINGLE PLANET IN THE DATABASE
 router.put('/:id', function (req, res) {
-    let planetId = req.params.id;
+    var planetId = req.params.id;
     Planet.findById(planetId, function (err, planets) {
         if (err) return res.status(500).send("Erro ao procurar planeta.");
         if (!planets) return res.status(404).send("Planeta não encontrado.");
