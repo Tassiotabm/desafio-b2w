@@ -4,8 +4,8 @@
   "description": "![RESTful API design with Node.js](https://cdn-images-1.medium.com/max/2000/1*jjYC9tuf4C3HkHCP5PcKTA.jpeg \"RESTful API design with Node.js\")",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js",
-    "prod": "git pull && npm run start",
+    "start": "node server.js && pm2 start server.js",
+    "prod": "git pull && node server.js && pm2 start server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
